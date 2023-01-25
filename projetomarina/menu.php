@@ -35,7 +35,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="formulariocliente.php">Area do Cliente</a>
+          <a class="nav-link" href="logincliente.php">Area do Cliente</a>
         </li>
 
       </ul>
