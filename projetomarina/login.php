@@ -11,14 +11,14 @@
   <?php
 
 	//echo "senha".password_hash(123, PASSWORD_DEFAULT);
-/*
+
 
 		$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
 		if(!empty($dados["btnlogin"])){
 			var_dump($dados);
 
-			$sql = "SELECT matricula, nome, email, senha 
+			$sql = "SELECT nome, email, senha 
                         FROM funcionario 
                         WHERE email =:usuario  
                         LIMIT 1";
@@ -46,15 +46,13 @@
 				$_SESSION['msg'] = "Usuário ou Senha não encontrados";
 			}
 
-
-
 		}
 
 		if(isset($_SESSION['msg'])){
 			echo $_SESSION['msg'];
 			unset($_SESSION['msg']);
 		}
-		*/
+		
 
 	?>
 

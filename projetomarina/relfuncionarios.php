@@ -26,7 +26,7 @@
             <table class="table">
                     <thead>
                         <tr>
-                        <th>Matrícula</th>
+
                         <th>Cpf</th>
                         <th>Nome</th>
                         <th>Telefone</th>

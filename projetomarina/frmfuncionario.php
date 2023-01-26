@@ -2,7 +2,7 @@
     require_once 'head.php';
 ?>
 
-<form method="POST" action="controlefuncionario.php">
+<form method="POST" action="controlefuncionario.php"enctype="multipart/form-data">
     <div class="container">
         <div class="row">
                 <div class="col-md-12 text-center">
@@ -31,17 +31,37 @@
                     <input type="text" name="cpf" class="form-control" onkeypress="$(this).mask('000.000.000-00');">
                 </div>
             </div>
+
+            <div class="col-md-2">        
+                <div class="form-group">            
+                    <label for="Pix">Pix</label>
+                    <input type="text" name="Pix" class="form-control">
+                </div>
            
-        </div>
+            </div>
         
         <div class="row">
+        <div class="col-md-2">        
+                <div class="form-group">            
+                    <label for="Foto">Foto</label>
+                    <input type="file" name="Foto" class="form-control">
+                </div>
            
+            </div>
            
 
-            <div class="col-md-3">
-                <div class="form-group">
-                    <label for="qualificacao">Qualificação</label>
-                    <input type="text" class="form-control" name="qualificacao">
+        <div class="col-md-5  ">
+              <div class="form-group">
+                 <label for="senha">Selecione Sua função</label><p>
+                 <select name="funcao">
+                    <option value="copeiro">Copeiro</option>
+                    <option value="garçon">Garçon</option>
+                    <option value="fritadeira">Fritadeira</option>
+
+                </select>
+                </div>
+            </div>
+                   
                 </div>
             </div>
 

@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$dbname = "oficina";
+$dbname = "arcofesta";
 $port = 3306;
 
 try{
