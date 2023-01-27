@@ -73,6 +73,14 @@
         </div>
         
         <div class="row">
+  
+        <div class="col-md-2">        
+                <div class="form-group">            
+                    <label for="Foto">Foto</label>
+                    <input type="file" name="Foto" class="form-control">
+                </div>
+           
+            </div>
            
            
 
