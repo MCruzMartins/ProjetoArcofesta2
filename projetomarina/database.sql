@@ -12,7 +12,8 @@ create table funcionario (
     email varchar(100)not null,
     função varchar(100)not null,
     senha varchar(255)not null,
-    pix varchar (50)not null);
+    pix varchar (50)not null,
+	foto varchar (255) not null);
     
 create table Cliente
 (
