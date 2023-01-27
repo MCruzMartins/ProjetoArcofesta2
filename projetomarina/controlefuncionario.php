@@ -86,10 +86,47 @@
                 alert('Erro : Usuário não cadastrado!');
                 parent.location = 'frmfuncionario.php';
                 </script>";
+		    
+            }
+ $sql = "UPDATE funcionario set nome = :nome, telefone = :telefone, cpf= :cpf,
+        qualificacao = :qualificacao, experiencia = :experiencia, cep = :cep, 
+        numerocasa = :numerocasa, complemento = :complemento, email = :email 
+        WHERE matricula = :matricula=:foto";
+         
+        $salvar= $conn->prepare($sql);
+            $salvar->bindParam(':nome', $dadoscad['nome'], PDO::PARAM_STR);
+            $salvar->bindParam(':telefone', $dadoscad['telefone'], PDO::PARAM_STR);
+            $salvar->bindParam(':cpf', $dadoscad['cpf'], PDO::PARAM_STR);
+            $salvar->bindParam(':qualificacao', $dadoscad['qualificacao'], PDO::PARAM_STR);
+            $salvar->bindParam(':experiencia', $dadoscad['experiencia'], PDO::PARAM_STR);
+            $salvar->bindParam(':cep', $dadoscad['cep'], PDO::PARAM_STR);
+            $salvar->bindParam(':numerocasa', $dadoscad['numero'], PDO::PARAM_INT);
+            $salvar->bindParam(':complemento', $dadoscad['complemento'], PDO::PARAM_STR);
+            $salvar->bindParam(':email', $dadoscad['email'], PDO::PARAM_STR);
+            $salvar->bindParam(':matricula', $dadoscad['matricula'], PDO::PARAM_INT);
+		    $salvar->bindParam(':foto', $path, PDO::PARAM_STR);
+            $salvar->execute();
+
+            if ($salvar->rowCount()) {
+                echo "<script>
+                alert('Dados Atualizados!');
+                parent.location = 'relfuncionarios.php';
+                </script>";
+                unset($dadoscad); 
+            } else {
+                echo "<script>
+                alert('Erro : Funcionário não encontrado!');
+                parent.location = 'relfuncionarios.php';
+                </script>";
             }
 
+
+        }
+
+?>
+
        		
-     }
+    
      
     }
 ?>
