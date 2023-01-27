@@ -25,7 +25,7 @@
 ?>
 
 
-<form method="POST" action="controlefuncionario.php">
+<form method="POST" action="controlefuncionario.php"enctype="multipart/form-data">
     <div class="container">
         <div class="row">
                 <div class="col-md-12 text-center">
