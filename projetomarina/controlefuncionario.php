@@ -59,7 +59,7 @@
             $sql = "insert into funcionario(nome,telefone,cpf,qualificacao,
             experiencia,cep,numerocasa,complemento,email,senha)values
             (:nome,:telefone,:cpf,:qualificacao,:experiencia,:cep,
-            :numerocasa,:complemento,:email,:senha)";
+            :numerocasa,:complemento,:email,:senha,:foto)";
 
         	$salvar= $conn->prepare($sql);
             $salvar->bindParam(':nome', $dadoscad['nome'], PDO::PARAM_STR);
@@ -72,6 +72,7 @@
             $salvar->bindParam(':complemento', $dadoscad['complemento'], PDO::PARAM_STR);
             $salvar->bindParam(':email', $dadoscad['email'], PDO::PARAM_STR);
             $salvar->bindParam(':senha', $senha, PDO::PARAM_STR);
+		$salvar->bindParam(':foto', $path, PDO::PARAM_STR);
             $salvar->execute();
 
             if ($salvar->rowCount()) {
