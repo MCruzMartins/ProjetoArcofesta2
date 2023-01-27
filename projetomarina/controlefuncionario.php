@@ -57,7 +57,7 @@
             $senha = password_hash($dadoscad['senha'], PASSWORD_DEFAULT);
 
             $sql = "insert into funcionario(nome,telefone,cpf,qualificacao,
-            experiencia,cep,numerocasa,complemento,email,senha)values
+            experiencia,cep,numerocasa,complemento,email,senha,foto)values
             (:nome,:telefone,:cpf,:qualificacao,:experiencia,:cep,
             :numerocasa,:complemento,:email,:senha,:foto)";
 
