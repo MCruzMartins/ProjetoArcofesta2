@@ -28,19 +28,31 @@ create table Cliente
 
 create table Contrato 
 (
-   Númerocontrato integer primary key auto_increment,
+   Numerocontrato integer primary key auto_increment,
    Dataevento date not null,
    preco double not null,	
    Tipoevento varchar(15)not null,
     cep char(9) not null,
     numero integer not null,
     complemento varchar(40)not null,
-    idcolaborador integer not null,
     cpf char (12) not null,
     cor_uniforme varchar (40) not null,
     Tempo_evento varchar (9) not null,
         foreign key(Cpf)references cliente(Cpf),
 		foreign key(idcolaborador)references funcionario (idcolaborador));
+
+ create table Item
+
+ (
+iditem integer primary key,
+Idcolaborador integer not null,
+Quantidade integer  not null,
+Numerocontrato int not null,
+preco double not null;
+foreign key(idcolaborador)references funcionario (idcolaborador),
+foreign key(Numerocontrato)references Contrato (Numerocontrato);
+
+)
 
 insert into funcionario(nome,telefone,cep,email,função,senha,pix,cpf,foto)VALUES
 ('Jhon Lennon Ribeiro','21981454753','23058002','jlennon1989.jrl@gmail.com','garçom','123','12345678910','123456789'),

@@ -14,7 +14,7 @@
           <a class="nav-link" href="contrato.php">Agendar Serviço</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="">Serviços Agendados</a>          
+          <a class="servicosagendados.php" href="servicosagendados.php">Serviços Agendados</a>          
         </li>
         <li class="nav-item">
           <a class="nav-link" href="">Serviços Realizados</a>
@@ -23,7 +23,7 @@
 
 
         <li class="nav-item">
-          <a class="nav-link" href="faleconosco.php">Fale Conosco</a>
+          <a class="faleconosco.php" href="faleconosco.php">Fale Conosco</a>
 
 </li>
 

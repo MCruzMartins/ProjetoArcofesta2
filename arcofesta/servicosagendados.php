@@ -3,7 +3,7 @@
 	ob_start();
     require_once 'conexao.php';
     require_once 'head.php';
-    $idcolaborador=$_SESSION['idcolaborador'];
+    $cpf= $_SESSION['cpf'];
 
     
     ?>
@@ -31,7 +31,7 @@
      where
      funcionario.idcolaborador = contrato.idcolaborador and
      contrato.cpf=cliente.cpf 
-     and contrato.idcolaborador = $idcolaborador
+     and contrato.cpf = $cpf
      LIMIT $inicio , $limitereg";
 
     $resultado= $conn->prepare($busca);

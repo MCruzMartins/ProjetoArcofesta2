@@ -18,7 +18,7 @@
 		if(!empty($dados["btnlogin"])){
 			var_dump($dados);
 
-			$sql = "SELECT nome, email, senha 
+			$sql = "SELECT Cpf,nome, email, senha 
                         FROM cliente 
                         WHERE email =:usuario  
                         LIMIT 1";
@@ -34,6 +34,9 @@
 
 				if(password_verify($dados['senha'], $linha['senha'])){
 					$_SESSION['nome'] = $linha['nome'];
+					$_SESSION['cpf'] = $linha['Cpf'];
+				
+
 					header("Location: administrativocliente.php");
 				}
 				else{

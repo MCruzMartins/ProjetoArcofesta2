@@ -10,7 +10,7 @@
 
   <?php
 
-	//echo "senha".password_hash(123, PASSWORD_DEFAULT);
+	echo "senha".password_hash(123, PASSWORD_DEFAULT);
 
 
 		$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);

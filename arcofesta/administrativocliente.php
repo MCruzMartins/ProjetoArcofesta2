@@ -4,6 +4,8 @@
   
     session_start();
 	ob_start();
+
+  
   ?>
 <div class="container-fluid cli">
   <h1 class="text-center">Área do Cliente</h1>
@@ -19,7 +21,7 @@
 
 <h4>
 
-<a href="contrato.php"><button type="submit">Agendar Serviço</button></a>
+<a href="contratocliente.php"><button type="submit">Agendar Serviço</button></a>
 
 
 <!--

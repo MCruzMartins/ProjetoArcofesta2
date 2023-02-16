@@ -1,11 +1,12 @@
+
+
+
+
 <?php
-    session_start();
-	ob_start();
+
     require_once 'conexao.php';
     require_once 'head.php';
-    $idcolaborador=$_SESSION['idcolaborador'];
 
-    
     ?>
 
 
@@ -14,7 +15,7 @@
 
 <?php
 
-    
+
     $pagatual = filter_input(INPUT_GET, "page", FILTER_SANITIZE_NUMBER_INT);
 	$pag = (!empty($pagatual)) ? $pagatual : 1;
 
@@ -31,7 +32,6 @@
      where
      funcionario.idcolaborador = contrato.idcolaborador and
      contrato.cpf=cliente.cpf 
-     and contrato.idcolaborador = $idcolaborador
      LIMIT $inicio , $limitereg";
 
     $resultado= $conn->prepare($busca);
@@ -105,4 +105,5 @@
     }
 
 
-?> 
+
+?>
