@@ -1,3 +1,11 @@
+<?php
+    require_once 'head.php';
+     require_once 'menu.php';
+  ?>
+
+
+
+
 <div class="container bg-white">
     <div class="row">
         <div class="col-md-12 text-center">     
@@ -26,3 +34,7 @@
     <input type="text" class="form-control" name="duvida">
   </div>
         </li>
+
+        <?php
+    require_once 'footer.php';
+  ?>

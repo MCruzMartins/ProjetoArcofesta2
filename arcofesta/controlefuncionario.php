@@ -85,6 +85,7 @@
                 parent.location = 'frmfuncionario.php';
                 </script>";
                 unset($dadoscad); 
+                
             } else {
                 echo "<script>
                 alert('Erro : Usuário não cadastrado!');

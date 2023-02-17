@@ -78,33 +78,6 @@
                     <input type="text" name="complemento" class="form-control">
                 </div>
             </div>
-            <div class="col-md-5">
-                <div class="form-group">
-                    <label for="função">Colaborador</label>
-                    <select name="colaborador" class="form-control">
-
-                        <?php
-                            $sql = "SELECT * from funcionario";
-                            $resultado=$conn->prepare($sql);
-                            $resultado->execute();
-                            if (($resultado) and ($resultado->rowCount() != 0)) { 
-                                while ($linha = $resultado->fetch(PDO::FETCH_ASSOC)) {
-
-                                    extract($linha);
-
-
-                        ?>
-                        <option value="<?php echo $função;?>"> <?php echo $função; ?> </option>
-                        
-                        <?php
-                                }
-                            }
-                            ?>
-
-                    </select>                    
-                </div>
-            </div> 
-            </div>
             <div class="col-md-2">        
                 <div class="form-group">            
                     <label for="Nome">Quem irá recepcionar a equipe?</label>
@@ -164,10 +137,14 @@
             <div class="col-md-10 text-right">
                 <div class="form-group">
                    
-                    <input type="submit" class="btn btn-primary" value="Enviar" name="btncad">
+                <h4> <a href="controlefinaliza"><button type="button" class="btn btn-primary">Enviar</button></a></h4> 
                 </div>  
             </div>
         </div>
     </div>
   
+    <script>
+    alert('Contrato enviado');
+    </script>;
+
 </form>

@@ -21,8 +21,7 @@
 
 <h4>
 
-<a href="contratocliente.php"><button type="submit">Agendar Serviço</button></a>
-
+<a href="marcar.php"><button type="submit">Agendar Serviço</button></a>
 
 <!--
     <a href="formulariocliente.php"><button type="submit">Cadastro</button></a>

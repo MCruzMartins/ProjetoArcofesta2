@@ -4,7 +4,6 @@
 	include_once 'conexao.php';
 
 	session_start();
-	ob_start();
 
   ?>
 
@@ -24,13 +23,15 @@
                         LIMIT 1";
         	$resultado= $conn->prepare($sql);
 
-			$resultado->bindParam(':usuario', $dados['usuario'], PDO::PARAM_STR);
+			$resultado->bindParam(':usuario', $dados["usuario"], PDO::PARAM_STR);
        		
 			$resultado->execute();
 
 			if(($resultado) AND ($resultado->rowCount() != 0)){
 				$linha = $resultado->fetch(PDO::FETCH_ASSOC);
-				//var_dump($linha);
+				var_dump($linha);
+
+			
 
 				if(password_verify($dados['senha'], $linha['senha'])){
 					$_SESSION['nome'] = $linha['nome'];

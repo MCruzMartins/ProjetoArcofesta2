@@ -45,7 +45,7 @@
             $salvar->bindParam(':nascimento', $dadoscad['Nascimento'], PDO::PARAM_STR);
             $salvar->bindParam(':telefone', $dadoscad['Telefone'], PDO::PARAM_STR);
             $salvar->bindParam(':email', $dadoscad['email'], PDO::PARAM_STR);
-            $salvar->bindParam(':senha', $dadoscad['senha'], PDO::PARAM_INT);
+            $salvar->bindParam(':senha', $senha, PDO::PARAM_STR);
             $salvar->execute();
 
             if ($salvar->rowCount()) {
