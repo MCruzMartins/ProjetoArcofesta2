@@ -76,7 +76,7 @@
         
                    </form>
 
-                   <a href="finalizar.php"><button type="button" class="btn btn-primary">Finalizar Contrato</button></a>
+                   <a href="controlefinaliza.php"><button type="button" class="btn btn-primary">Finalizar Contrato</button></a>
 
         </div>
                      

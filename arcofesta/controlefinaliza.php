@@ -18,7 +18,7 @@
  
 <h1 class="text-center">Produtos no Carrinho</h1>
 
-<form method="post" action="finalizar.php">
+<form method="post" action="contratocliente.php">
         <table class="table">
                 <thead>
                     <tr>
@@ -61,10 +61,11 @@
     </table>
     <?php 
         echo "<h5>Total do Pedido - R$ ".$preco;
+        $_SESSION["preco"] = $preco
+
     ?>
     </h5>
-    <h4> <a href="iditem.php"><button type="button" class="btn btn-primary">Finalizar Contrato</button></a></h4> 
-</form>
+    <h4> <a href="contratocliente.php"><button type="button" class="btn btn-primary">Finalizar Contrato</button></a></h4> 
 
 <?php
 

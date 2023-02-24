@@ -3,7 +3,7 @@
     require_once 'conexao.php';
 ?>
 
-<form method="POST" action="contratocliente.php">
+<form method="POST" action="salvacontrato.php">
     <div class="container">
         <div class="row">
                 <div class="col-md-12 text-center">
@@ -26,12 +26,12 @@
                 <div class="form-group">            
                     <label for="tipodoevento">Tipo do evento</label>
                     <select name="Evento">
-                    <option value="">15 anos</option>
-                    <option value="">Infantil</option>
-                    <option value="">Casamento/Bodas</option>
-                    <option value="">Empresarial</option>
-                    <option value="">Escolar</option>
-                    <option value="">Outros</option>
+                    <option value="15 anos">15 anos</option>
+                    <option value="infantil">Infantil</option>
+                    <option value="Casamento/Bodas">Casamento/Bodas</option>
+                    <option value="Empresarial">Empresarial</option>
+                    <option value="Escolar">Escolar</option>
+                    <option value="Outros">Outros</option>
                 </select>
                  
                 </div>
@@ -75,49 +75,18 @@
                     
                 </div>
             </div>
-        </div>
-        <div class="row">
-                        <?php
-
-                            $sql = "SELECT * from contrato";
-                            $resultado=$conn->prepare($sql);
-                            $resultado->execute();
-
-                            if(($resultado) && ($resultado->rowCount()!=0)){
-                                while ($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
-                                    extract($linha);
-
-                           
-                        ?>                    
-                    
-                    <option value="<?php echo $contrato;?>"><?php echo $contrato;  ?></option>
-                        
-
-                    <?php
-                                }
-                            }
-                            ?>
-
-                    </select>                
-
-
-                </div>
-            </div>
-  
-             
                    
         <div class="row">   
             <div class="col-md-10 text-right">
                 <div class="form-group">
-                   
-                <h4> <a href="controlefinaliza.php"><button type="button" class="btn btn-primary">Enviar</button></a></h4> 
+                
+                <h4> <a href="salvacontrato.php"><button type="button" class="btn btn-primary">Salvar Contrato</button></a></h4> 
+                
                 </div>  
             </div>
         </div>
     </div>
   
-    <script>
-    alert('Contrato enviado');
-    </script>;
+   
 
 </form>

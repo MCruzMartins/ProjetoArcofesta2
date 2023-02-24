@@ -1,13 +1,12 @@
 <?php
-<?php
 
 require_once 'conexao.php';
 require_once 'head.php';
 
 
-$id = filter_input(INPUT_GET, "matricula", FILTER_SANITIZE_NUMBER_INT);
+$id = filter_input(INPUT_GET, "idcolaborador", FILTER_SANITIZE_NUMBER_INT);
 
-$sql = "DELETE From funcionario where matricula = $id Limit 1"
+$sql = "DELETE From funcionario where idcolaborador = $id Limit 1"
 $resultado= $conn->prepare($sql);
 $resultado->execute();
 
