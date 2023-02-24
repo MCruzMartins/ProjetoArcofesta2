@@ -8,7 +8,7 @@
     require_once 'conexao.php';
 
     $cesta = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-    //var_dump($cesta);
+var_dump($cesta);
    
     $idcolaborador = $cesta["idcolaborador"];
 
@@ -20,13 +20,15 @@
         $linha=$resultado->fetch(PDO::FETCH_ASSOC);
         extract($linha);
         
-        $sql2="INSERT into carrinho(idcolaborador,nome,funcao,foto)
-        values(:idcolaborador,:nome,:funcao,:foto)";
+        $sql2="INSERT into carrinho(idcolaborador,nome,funcao,foto,precohora,tempoevento)
+        values(:idcolaborador,:nome,:funcao,:foto,:preco,:tempoevento)";
         $salvar = $conn->prepare($sql2);
         $salvar->bindParam(':idcolaborador', $idcolaborador, PDO::PARAM_INT);
         $salvar->bindParam(':nome', $nome, PDO::PARAM_STR);
         $salvar->bindParam(':funcao', $função, PDO::PARAM_STR);
         $salvar->bindParam(':foto', $foto, PDO::PARAM_STR);
+        $salvar->bindParam(':preco', $precohora, PDO::PARAM_STR);
+        $salvar->bindParam(':tempoevento', $cesta["tempodeevento"], PDO::PARAM_STR);
         $salvar->execute();
 
 

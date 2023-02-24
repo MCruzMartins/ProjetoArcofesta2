@@ -21,28 +21,6 @@
                 </div>
         
             </div>
-            <div class="col-md-2">        
-                <div class="form-group">            
-                    <label for="tempoevento">Tempo do Evento</label>
-                    <select name="Tempo de evento">
-                    <option value="">5horas</option>
-                    <option value="">6horas</option>
-                    <option value="">7horas</option>
-                    <option value="">8horas</option>
-                    <option value="">9horas</option>
-                    <option value="">10horas</option>
-            
-                </select>
-                </div>
-            </div>
-
-             <div class="col-md-2">        
-                <div class="form-group">            
-                    <label for="preco">Preço</label>
-                    <input type="text" name="preco" class="form-control">
-                </div>
-            </div>
-            
 
             <div class="col-md-2">        
                 <div class="form-group">            
@@ -99,11 +77,6 @@
             </div>
         </div>
         <div class="row">
-           
-            <div class="col-md-3">
-                <div class="form-group">
-                    <label for="cor_uniforme">Cor do Uniforme</label>
-                    <select name="cor_uniforme" class="form-control">
                         <?php
 
                             $sql = "SELECT * from contrato";
@@ -137,7 +110,7 @@
             <div class="col-md-10 text-right">
                 <div class="form-group">
                    
-                <h4> <a href="controlefinaliza"><button type="button" class="btn btn-primary">Enviar</button></a></h4> 
+                <h4> <a href="controlefinaliza.php"><button type="button" class="btn btn-primary">Enviar</button></a></h4> 
                 </div>  
             </div>
         </div>

@@ -24,7 +24,9 @@
                         <tr>
                         <th>Imagem</th>                        
                         <th>Nome</th>   
-                        <th>Função</th>              
+                        <th>Função</th> 
+                        <th>Preço hora</th>
+
                        
                         </tr>
                     </thead>
@@ -40,6 +42,7 @@
                             <td><img src="<?php echo $foto; ?>" style=width:150px;height:150px;></td>
                             <td><?php echo $nome; ?></td>
                             <td><?php echo $funcao; ?></td>
+                            <td><?php echo $precohora; ?></td>
                             <td>  
                                  <input type="hidden" name="idcolaborador" value="<?php echo $idcolaborador; ?>">          
                                 <input type="submit" class="btn btn-danger" name="excluir" value="Excluir">

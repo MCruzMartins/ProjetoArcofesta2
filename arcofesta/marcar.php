@@ -21,38 +21,67 @@
     $resultado->execute();
     ?>    
 
-    <div class="container-fluid imagens">
+    <div class="container-fluid">
     <div class="row">
-    <?php       
-    while ($linha = $resultado->fetch(PDO::FETCH_ASSOC)) {           
-        extract($linha);                          
+   
     
-    ?>     
-           <a href="finalizar.php"><button type="button" class="btn btn-primary">Finalizar Contrato</button></a>
-    
+  
+
+
         <div class="col-md-3 text-center">
-                <img src="<?php echo $foto; ?>" style=width:18rem;height:18rem;>                    
-                    <h4><?php echo $nome; ?></h4>
-                    <h5>Função: <?php echo $função; ?></h5>  
-                    <form action="carrinhocliente.php" method="post">
-        
-                     
-                      <input type="hidden" name="idcolaborador" value="<?php echo $idcolaborador; ?>">
+                
+            <form action="carrinhocliente.php" method="post">
+                <div class="row">                     
+                    <div class="col-md-12 text-center">        
+                         <div class="form-group">            
+                            <label for="tempoevento">Tempo do Evento</label>
+                            <select name="tempodeevento">
+                                <option value="5">5horas</option>
+                                <option value="6">6horas</option>
+                                <option value="7">7horas</option>
+                                <option value="8">8horas</option>
+                                <option value="9">9horas</option>
+                                <option value="10">10horas</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                            
+
+                    <?php       
+                         while ($linha = $resultado->fetch(PDO::FETCH_ASSOC)) {           
+                          extract($linha);                          
+    
+                     ?>     
+            
+            <div class="row">
+                <div class="col-md-3">        
+                        
+                                <img src="<?php echo $foto; ?>" style=width:18rem;height:18rem;>                    
+                                <p><?php echo $nome; ?></p>
+                                <h5>Função: <?php echo $função; ?></h5>  
+                                <input type="hidden" name="idcolaborador" value="<?php echo $idcolaborador; ?>">
                     <input type="submit" class="btn btn-primary" value="Selecionar">
-                    
+                 </div> 
+            </div>  
+            
+            <?php      
+    
+                }     
+
+
+    
+                 ?>
+
+        
                    </form>
+
+                   <a href="finalizar.php"><button type="button" class="btn btn-primary">Finalizar Contrato</button></a>
 
         </div>
                      
 
-        <?php      
-    
-    }     
-    
-  
-        
-        ?>
-
+      
 
     </div>
   </div>
