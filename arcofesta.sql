@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15-Fev-2023 às 01:30
+-- Tempo de geração: 28-Fev-2023 às 23:40
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -26,6 +26,21 @@ USE `arcofesta`;
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `carrinho`
+--
+
+CREATE TABLE `carrinho` (
+  `idcolaborador` int(11) NOT NULL,
+  `nome` varchar(60) NOT NULL,
+  `funcao` varchar(30) NOT NULL,
+  `foto` varchar(255) NOT NULL,
+  `precohora` double NOT NULL,
+  `tempoevento` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `cliente`
 --
 
@@ -43,8 +58,7 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`Cpf`, `nome`, `Nascimento`, `telefone`, `email`, `senha`) VALUES
-('05841983709', 'Marina', '0000-00-00', '21972122211', 'prof.marina.geo@gmail.com', '123'),
-('59848448', 'gabi', '2000-01-01', '21971165408', 'gabi@gmail.com', '$2y$10$CjNBT1N5Kh4mJ2zrLmC7x.F0wWaLHW.PVHaOTEscfiW1hJ374NXyO');
+('05841983711', 'Marina Cruz', '1990-08-18', '21971165408', 'arcofesta.festa@gmail.com', '$2y$10$lkij7uFtIr6KJxm3JbLRouK8YaxZ9H5KTa.clPMySte0l7SG.oPym');
 
 -- --------------------------------------------------------
 
@@ -53,27 +67,30 @@ INSERT INTO `cliente` (`Cpf`, `nome`, `Nascimento`, `telefone`, `email`, `senha`
 --
 
 CREATE TABLE `contrato` (
-  `Númerocontrato` int(11) NOT NULL,
+  `Numerocontrato` int(11) NOT NULL,
   `Dataevento` date NOT NULL,
   `preco` double NOT NULL,
   `Tipoevento` varchar(15) NOT NULL,
   `cep` char(9) NOT NULL,
   `numero` int(11) NOT NULL,
   `complemento` varchar(40) NOT NULL,
-  `idcolaborador` int(11) NOT NULL,
   `cpf` char(12) NOT NULL,
-  `cor_uniforme` varchar(40) NOT NULL,
-  `Tempo_evento` varchar(9) NOT NULL
+  `Tempo_evento` varchar(9) NOT NULL,
+  `nomerecep` varchar(60) NOT NULL,
+  `telrecep` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `contrato`
 --
 
-INSERT INTO `contrato` (`Númerocontrato`, `Dataevento`, `preco`, `Tipoevento`, `cep`, `numero`, `complemento`, `idcolaborador`, `cpf`, `cor_uniforme`, `Tempo_evento`) VALUES
-(1, '2023-02-28', 600, '15 anos', '23085-610', 35, 'casa', 1, '59848448', 'vermelho', '4 horas'),
-(2, '2023-02-15', 400, 'casamento', '23020660', 135, 'casa', 1, '05841983709', 'preto', '4 horas'),
-(3, '2023-02-10', 600, 'festa de 1 ano', '28435974', 24, 'casa', 1, '59848448', 'branco', '4 horas');
+INSERT INTO `contrato` (`Numerocontrato`, `Dataevento`, `preco`, `Tipoevento`, `cep`, `numero`, `complemento`, `cpf`, `Tempo_evento`, `nomerecep`, `telrecep`) VALUES
+(1, '2023-03-02', 950, '15 anos', '23085610', 31, '31', '05841983711', '5', 'maria', '21988691066'),
+(2, '2023-03-02', 950, '15 anos', '23085610', 31, '31', '05841983711', '5', 'maria', '21988691066'),
+(3, '2023-03-02', 950, '15 anos', '23085610', 31, '31', '05841983711', '5', 'maria', '21988691066'),
+(4, '2023-03-31', 1325, '15 anos', '23085-610', 100, 'galpão', '05841983711', '5', 'antonio', '21545454'),
+(5, '2023-03-02', 125, '15 anos', '23085-610', 40, 'salão', '05841983711', '5', 'marina', '245454'),
+(6, '2023-02-20', 750, '15 anos', '23033090', 3, 'ja sei', '05841983711', '5', 'vania', 'jose');
 
 -- --------------------------------------------------------
 
@@ -91,15 +108,66 @@ CREATE TABLE `funcionario` (
   `senha` varchar(255) NOT NULL,
   `pix` varchar(50) NOT NULL,
   `cpf` varchar(50) NOT NULL,
-  `foto` varchar(255) NOT NULL
+  `foto` varchar(255) NOT NULL,
+  `precohora` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `funcionario`
 --
 
-INSERT INTO `funcionario` (`idcolaborador`, `nome`, `telefone`, `cep`, `email`, `função`, `senha`, `pix`, `cpf`, `foto`) VALUES
-(1, 'Jhon Lennon Ribeiro', '21981454753', '23058002', 'jlennon1989.jrl@gmail.com', 'garçom', '$2y$10$t6govEFTvUipx.2fxo.RtedIu4DNbpezQAoVLcOeNqteNDLOlQz72', '12345678910', '123456789', 'foto/jhon.jpg');
+INSERT INTO `funcionario` (`idcolaborador`, `nome`, `telefone`, `cep`, `email`, `função`, `senha`, `pix`, `cpf`, `foto`, `precohora`) VALUES
+(1, 'Jhon Lennon Ribeiro', '21981454753', '23058002', 'jlennon1989.jrl@gmail.com', 'garçom', '$2y$10$lkij7uFtIr6KJxm3JbLRouK8YaxZ9H5KTa.clPMySte0l7SG.oPym', '12345678910', '123456789', 'foto\\Jhon.jpg', 25),
+(2, 'Maria Jariele', '21981454753', '23058002', 'marial@gmail.com', 'garçom', '$2y$10$lkij7uFtIr6KJxm3JbLRouK8YaxZ9H5KTa.clPMySte0l7SG.oPym', '12345678910', '123456789', 'foto\\maria.png', 25);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `item`
+--
+
+CREATE TABLE `item` (
+  `iditem` int(11) NOT NULL,
+  `idcolaborador` int(11) NOT NULL,
+  `Numerocontrato` int(11) NOT NULL,
+  `preco` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `item`
+--
+
+INSERT INTO `item` (`iditem`, `idcolaborador`, `Numerocontrato`, `preco`) VALUES
+(1, 1, 2, 950),
+(2, 1, 3, 950),
+(3, 1, 3, 950),
+(4, 1, 3, 950),
+(5, 2, 3, 950),
+(6, 2, 3, 950),
+(7, 2, 3, 950),
+(8, 2, 3, 950),
+(9, 2, 3, 950),
+(10, 2, 3, 950),
+(11, 2, 3, 950),
+(12, 1, 4, 1325),
+(13, 1, 4, 1325),
+(14, 1, 4, 1325),
+(15, 2, 4, 1325),
+(16, 2, 4, 1325),
+(17, 2, 4, 1325),
+(18, 2, 4, 1325),
+(19, 2, 4, 1325),
+(20, 2, 4, 1325),
+(21, 2, 4, 1325),
+(22, 2, 4, 1325),
+(23, 2, 4, 1325),
+(24, 2, 5, 125),
+(25, 2, 6, 750),
+(26, 2, 6, 750),
+(27, 2, 6, 750),
+(28, 2, 6, 750),
+(29, 2, 6, 750),
+(30, 2, 6, 750);
 
 --
 -- Índices para tabelas despejadas
@@ -115,15 +183,22 @@ ALTER TABLE `cliente`
 -- Índices para tabela `contrato`
 --
 ALTER TABLE `contrato`
-  ADD PRIMARY KEY (`Númerocontrato`),
-  ADD KEY `cpf` (`cpf`),
-  ADD KEY `idcolaborador` (`idcolaborador`);
+  ADD PRIMARY KEY (`Numerocontrato`),
+  ADD KEY `cpf` (`cpf`);
 
 --
 -- Índices para tabela `funcionario`
 --
 ALTER TABLE `funcionario`
   ADD PRIMARY KEY (`idcolaborador`);
+
+--
+-- Índices para tabela `item`
+--
+ALTER TABLE `item`
+  ADD PRIMARY KEY (`iditem`),
+  ADD KEY `idcolaborador` (`idcolaborador`),
+  ADD KEY `Numerocontrato` (`Numerocontrato`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
@@ -133,13 +208,19 @@ ALTER TABLE `funcionario`
 -- AUTO_INCREMENT de tabela `contrato`
 --
 ALTER TABLE `contrato`
-  MODIFY `Númerocontrato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Numerocontrato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `idcolaborador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idcolaborador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de tabela `item`
+--
+ALTER TABLE `item`
+  MODIFY `iditem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- Restrições para despejos de tabelas
@@ -149,8 +230,14 @@ ALTER TABLE `funcionario`
 -- Limitadores para a tabela `contrato`
 --
 ALTER TABLE `contrato`
-  ADD CONSTRAINT `contrato_ibfk_1` FOREIGN KEY (`cpf`) REFERENCES `cliente` (`Cpf`),
-  ADD CONSTRAINT `contrato_ibfk_2` FOREIGN KEY (`idcolaborador`) REFERENCES `funcionario` (`idcolaborador`);
+  ADD CONSTRAINT `contrato_ibfk_1` FOREIGN KEY (`cpf`) REFERENCES `cliente` (`Cpf`);
+
+--
+-- Limitadores para a tabela `item`
+--
+ALTER TABLE `item`
+  ADD CONSTRAINT `item_ibfk_1` FOREIGN KEY (`idcolaborador`) REFERENCES `funcionario` (`idcolaborador`),
+  ADD CONSTRAINT `item_ibfk_2` FOREIGN KEY (`Numerocontrato`) REFERENCES `contrato` (`Numerocontrato`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
