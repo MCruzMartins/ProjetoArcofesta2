@@ -2,7 +2,7 @@
     <div class="row text-center footer">
       <div class="col-md-3">
         <h3>Arcofesta</h3>
-        <p>Nossa empresa trabalha a mais de 5 anos levando qualidade e qualificação profissional para seu evento.</p>
+        <p>Há 5 anos levando qualidade e qualificação profissional para seu evento.</p>
       </div>
 
       <div class="col-md-3">
@@ -19,6 +19,15 @@
         </ul>
       </div>
 
+      <div class="col-md-3 text-center"> 
+          <div class="form-group">
+            <label for="whatsapp">Whatsapp</label>
+            <a href="https://wa.me/arcofesta">
+            <img src="imagens/zap.png" style=width:0.5rem;height:0.5rem; alt="imagem icone para contratar serviços"> </a>
+          </div>
+      </div>
+      <div> © 2022 Arcofesta </div>
+</div>
 
 
 

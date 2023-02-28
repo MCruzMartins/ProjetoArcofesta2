@@ -51,11 +51,11 @@
   </div>
 
 
-  <div class="row text-right">
-      <div class="col-md-12">
-     <a href ="logincliente.php" > <button type="submit"> Contratar </button> </a>
-
-
+  <div class="row text-center">
+       <div class="col-md-12">
+            <a href ="logincliente.php" > <button type="button" class="btn btn-success" style=width:200px;height:50px;> Contratar </button> </a>
+        </div>
+    </div>
 
 
 

@@ -3,12 +3,12 @@
      require_once 'menu.php';
   ?>
 
-
+<hr>
   <div class="container-fluid">
     <div class="row carrossel">
     <div class="col-md-2"></div>
 
-      <div class="col-md-8 text-center">
+      <div class="col-md-8 text-center" style= margin-top: 50px;>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>

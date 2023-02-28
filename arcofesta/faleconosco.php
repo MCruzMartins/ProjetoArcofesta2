@@ -45,15 +45,6 @@
       </div>
 </div>
 
-        
-      <div class="col-md-4 text-center"> 
-          <div class="form-group">
-            <label for="whatsapp">Whatsapp</label>
-            <a href="https://wa.me/arcofesta">
-            <img src="imagens/zap.png" style=width:5rem;height:5rem; alt="imagem icone para contratar serviços"> </a>
-          </div>
-      </div>
-
       
       <input type="submit" class="btn btn-primary" value="Enviar" name="btncad">
 

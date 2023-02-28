@@ -1,7 +1,8 @@
 <?php
     require_once 'head.php';  
-	
 	include_once 'conexao.php';
+    require_once 'menu.php';
+  ?>
 
 	session_start();
 
@@ -62,7 +63,7 @@
 
 <div class="container">
 	<div class="d-flex justify-content-center h-100">
-		<div class="card">
+		<div class="card" >
 			<div class="card-header">
 				<h3>Fazer login</h3>
 				<div class="d-flex justify-content-end social_icon">
