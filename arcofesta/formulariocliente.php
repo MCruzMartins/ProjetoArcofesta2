@@ -1,5 +1,6 @@
 <?php
     require_once 'head.php';
+    require_once 'menu.php';
 ?>
 
 <form method="POST" action="controlecliente.php">
@@ -55,11 +56,9 @@
 </div>
 
 
-
-
-
-
-
 <?php
     require_once 'footeradm.php';
 ?>
+
+
+

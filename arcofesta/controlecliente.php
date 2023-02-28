@@ -21,6 +21,12 @@
                 parent.location = 'formulariocliente.php';
                 </script>";
 
+                echo "<script>
+                alert('Cadastro realizado');
+                parent.location = 'formulariocliente.php';
+                </script>";
+                
+
             } else if(!filter_var($dadoscad['email'], FILTER_VALIDATE_EMAIL)) {
                 $vazio = true;
                 echo "<script>

@@ -1,7 +1,7 @@
 <?php
     require_once 'head.php';
+    require_once 'menu.php';
 ?>
-
 <form method="POST" action="controlefuncionario.php" enctype="multipart/form-data">
     <div class="container">
         <div class="row">
