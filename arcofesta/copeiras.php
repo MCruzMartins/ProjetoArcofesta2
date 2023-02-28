@@ -16,19 +16,11 @@
         <h3> Elas estão aptas a limpar as louças usadas durante o evento. Arrumar as bandeijas
             para que os garçons sirvam tudo limpo e organizado, além de deixar toda comida já preparada pela cozinheira (o) 
             quentinha. </h3>
+            <img src="imagens/copeiracopeira.jpg" style=width:18rem;height:18rem;>
+            <img src= "imagens/copeira6.jpg" style=width:18rem;height:18rem;>
+           <img src="imagens/copeira..jpg" style=width:18rem;height:18rem;>
 
       </div>
-      <div class="col-md-4">
-      <img src="imagens/copeiracopeira.jpg" style=width:18rem;height:18rem;>
-      <hr>
-      <img src= "imagens/copeira6.jpg" style=width:18rem;height:18rem;>
-      <div class="col-md-4">
-      <img src="imagens/copeira..jpg" style=width:18rem;height:18rem;>
-
-
-
-      </div>
-      
 </div>
 </div>
 <div class="row text-right">

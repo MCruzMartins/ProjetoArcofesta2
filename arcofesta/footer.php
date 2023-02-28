@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row text-center footer">
       <div class="col-md-3">
-        <h3>Tudo para festa</h3>
+        <h3>Arcofesta</h3>
         <p>Nossa empresa trabalha a mais de 5 anos levando qualidade e qualificação profissional para seu evento.</p>
       </div>
 

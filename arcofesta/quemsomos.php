@@ -51,6 +51,10 @@
   </div>
 
 
+  <div class="row text-right">
+      <div class="col-md-12">
+     <a href ="logincliente.php" > <button type="submit"> Contratar </button> </a>
+
 
 
 

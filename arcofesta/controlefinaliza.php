@@ -61,7 +61,9 @@
     </table>
     <?php 
         echo "<h5>Total do Pedido - R$ ".$preco;
-        $_SESSION["preco"] = $preco
+        $_SESSION["preco"] = $preco;
+        $_SESSION["tempo"] = $tempoevento;
+
 
     ?>
     </h5>

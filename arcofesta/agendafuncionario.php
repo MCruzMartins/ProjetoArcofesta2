@@ -25,13 +25,13 @@
 
 
 
-    $busca = "SELECT contrato.Númerocontrato,funcionario.nome as func,cliente.nome,contrato.Dataevento,contrato.preco,contrato.Tipoevento,contrato.cep,contrato.numero,
-    contrato.complemento,contrato.cor_uniforme,contrato.Tempo_evento
-     from contrato,funcionario,cliente
+    $busca = "SELECT contrato.Numerocontrato,funcionario.nome as func,cliente.nome,contrato.Dataevento,contrato.Tipoevento,contrato.cep,contrato.numero,
+    contrato.complemento,contrato.Tempo_evento,contrato.nomerecep,contrato.telrecep
+     from contrato,funcionario,cliente,item
      where
-     funcionario.idcolaborador = contrato.idcolaborador and
+     funcionario.idcolaborador = item.idcolaborador and
      contrato.cpf=cliente.cpf 
-     and contrato.idcolaborador = $idcolaborador
+     and item.idcolaborador = $idcolaborador
      LIMIT $inicio , $limitereg";
 
     $resultado= $conn->prepare($busca);
@@ -48,14 +48,14 @@
                         <th>Colaborador</th>
                         <th>Cliente</th>
                         <th>Data</th>
-                        <th>Preço</th>
                         <th>Evento</th>
                         <th>Cep</th>
                         <th>Numero</th>
                         <th>Complemento</th>
-                       
-                        <th>Uniforme</th>
                         <th>Tempo</th>
+                        <th>Quem irá recepciona-lo</th>
+                        <th>Telefone de quem irá recepciona-lo</th>
+
                         
                        
                         </tr>
@@ -69,25 +69,26 @@
             ?>
                     
                         <tr>
-                            <td><?php echo $Númerocontrato; ?></td>
+                            <td><?php echo $Numerocontrato; ?></td>
                             <td><?php echo $func; ?></td>
                             <td><?php echo $nome; ?></td>
                             <td><?php echo $Dataevento; ?></td>
-                            <td><?php echo $preco; ?>
                             <td><?php echo $Tipoevento; ?>
                             <td><?php echo $cep; ?>
                             <td><?php echo $numero; ?>
                             <td><?php echo $complemento; ?>
-                            <td><?php echo $cor_uniforme; ?>
                             <td><?php echo $Tempo_evento; ?>
+                            <td><?php echo $nomerecep;?>
+                            <td><?php echo $telrecep;?>
+
                         </td>
                             <td> 
-                                <?php echo "<a href='editar.php?contrato=$Númerocontrato'>" ; ?>                    
+                                <?php echo "<a href='editar.php?contrato=$Numerocontrato'>" ; ?>                    
                                 <input type="submit" class="btn btn-primary" name="editar" value="Editar">
                             </td>
 
                              <td>  
-                                <?php echo "<a href='excluir.php?contrato=$Númerocontrato'>" ; ?>               
+                                <?php echo "<a href='excluir.php?contrato=$Numerocontrato'>" ; ?>               
                                 <input type="submit" class="btn btn-danger" name="excluir" value="Excluir">
                             </td>
                         </tr>
@@ -106,3 +107,7 @@
 
 
 ?> 
+
+<?php
+    require_once 'footer.php';
+  ?>

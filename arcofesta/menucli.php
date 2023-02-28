@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light menu">
-    <a class="navbar-brand" href="index.php">Tudo para festa</a>
+    <a class="navbar-brand" href="index.php">Arcofesta</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
       aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"></span>
@@ -11,17 +11,9 @@
           <a class="nav-link" href="index.php">Home <span class="sr-only">(página atual)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="carrinhocliente.php">Agendar Serviço</a>
-        </li>
-        <li class="nav-item">
           <a class="servicosagendados.php" href="servicosagendados.php">Serviços Agendados</a>          
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="">Serviços Realizados</a>
-        </li>
-
-
-
+      
         <li class="nav-item">
           <a class="faleconosco.php" href="faleconosco.php">Fale Conosco</a>
 
